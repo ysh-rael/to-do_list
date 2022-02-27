@@ -1,49 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 								CRUD:
 
 				CREATE 		READ 	UPDATE 		DELETE
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const inpt_Task = window.document.getElementById('inptWithTo-do')
 const bttn_AddTask = window.document.getElementById('add')
 const listWithTasks = window.document.getElementById('listWithTo-do-day')
@@ -99,6 +59,8 @@ const addTaskInList = ()=> {
 		})
 	}
 }
+
+bttn_AddTask.addEventListener('click', () => addTaskInList())
 
 
 /*finished! made by Ysh-rael in 2022*/

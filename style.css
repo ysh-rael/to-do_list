@@ -1,5 +1,5 @@
 * {
-	color: #ccc
+	color: #ccc;
 }
 
 	body {
@@ -7,15 +7,17 @@
 		display: flex;
 		justify-content: center;
 
-		background-color: #adadad;
+		background-color: #eeeefa;
 	}
 	main{ 
 		margin-top: 100px;
 		min-width: 240px;
 		padding: 10px;
+		border-radius: 10px;
 
-		border: 1px solid white; 
+		border: 3px double gray; 
 		background-color: #2A2A2A;
+		box-shadow: rgb(0,0,0, .8);
 	}
 	main > div {
 		margin-top: 20px;
@@ -45,6 +47,10 @@
 	}
 	input[type=text] {
 		color: orangered;
+	}
+	input[type=text]:focus{
+		outline: none;
+		box-shadow: -1px 2px 2px rgb(190,190,190, .4)
 	}
 	span.bttns {
 		display: flex;
