@@ -1,12 +1,14 @@
 /*
-								CRUD:
+CRUD:
 
-				CREATE 		READ 	UPDATE 		DELETE
+CREATE 		READ 	UPDATE 		DELETE
 
 */
 const inpt_Task = window.document.getElementById('inptWithTo-do')
 const bttn_AddTask = window.document.getElementById('add')
 const listWithTasks = window.document.getElementById('listWithTo-do-day')
+const inpt_edit = document.createElement('input')
+inpt_edit.setAttribute('id','inpt_edit')
 
 //	Liga a tecla "enter" atravez do evento 'keypress' a uma funcion
 document.addEventListener('keypress', e => { if (e.which == 13) { addTaskInList() }})
@@ -54,8 +56,20 @@ const addTaskInList = ()=> {
 		})
 		// evento para editar tarefa contida na lista.
 		 edit.addEventListener('click', () => {
-			const editTask = prompt("Enter your change:")
-			editTask ? span_text.innerHTML = editTask : false
+			 if(null == task.querySelector('input')) {
+				 inpt_edit.type = 'text'
+				 inpt_edit.value = span_text.innerText
+				task.innerHTML = ''
+		 		task.appendChild(inpt_edit)	 && task.appendChild(span_bttns)
+				 edit.classList.add('confirm')
+			 } else{
+				if(inpt_edit.value === '') task.remove()
+				span_text.innerText = inpt_edit.value
+				task.innerHTML = ''
+				task.appendChild(span_text)	 && task.appendChild(span_bttns)
+				edit.classList.remove('confirm')
+
+			 }
 		})
 	}
 }
