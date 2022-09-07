@@ -11,10 +11,10 @@ const inpt_edit = document.createElement('input')
 inpt_edit.setAttribute('id','inpt_edit')
 
 //	Liga a tecla "enter" atravez do evento 'keypress' a uma funcion
-document.addEventListener('keypress', e => { if (e.which == 13) { addTaskInList() }})
+document.addEventListener('keypress', e => { if (e.which == 13)  addTaskInList() })
 
 
-const addTaskInList = ()=> {
+const addTaskInList = () => {
 	if (inpt_Task.value != 0) {
 
 		const inpt_Task_v = inpt_Task.value
@@ -56,19 +56,25 @@ const addTaskInList = ()=> {
 		})
 		// evento para editar tarefa contida na lista.
 		 edit.addEventListener('click', () => {
-			 if(null == task.querySelector('input')) {
-				 inpt_edit.type = 'text'
-				 inpt_edit.value = span_text.innerText
-				task.innerHTML = ''
-		 		task.appendChild(inpt_edit)	 && task.appendChild(span_bttns)
-				 edit.classList.add('confirm')
-			 } else{
+			function confirmarEdicao() {
 				if(inpt_edit.value === '') task.remove()
 				span_text.innerText = inpt_edit.value
 				task.innerHTML = ''
 				task.appendChild(span_text)	 && task.appendChild(span_bttns)
 				edit.classList.remove('confirm')
+				inpt_Task.focus()
+			}
+			 if(null == task.querySelector('input')) {
+				inpt_edit.type = 'text'
+				inpt_edit.value = span_text.innerText
+				task.innerHTML = ''
+		 		task.appendChild(inpt_edit)	 && task.appendChild(span_bttns)
+				edit.classList.add('confirm')
+				inpt_edit.focus()
+				document.addEventListener('keypress', e => { if (e.which == 13)  confirmarEdicao() })
 
+			 } else{
+				confirmarEdicao()
 			 }
 		})
 	}
@@ -76,8 +82,15 @@ const addTaskInList = ()=> {
 
 bttn_AddTask.addEventListener('click', () => addTaskInList())
 
-
 /*finished! made by Ysh-rael in 2022*/
+
+
+
+
+
+
+
+
 
 
 
