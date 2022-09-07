@@ -7,11 +7,10 @@ const htmlmin = require('gulp-htmlmin')
 const concat = require('gulp-concat')
 const rename = require('gulp-rename')
 
-
 function js(callback) {
     src('./src/**/*.js')
         .pipe(uglify())
-        .pipe(rename('main.min.js'))
+        .pipe(rename({suffix: ".min"}))
         .pipe(gulp.dest('build'))
         
     return callback()
@@ -29,7 +28,7 @@ function css(callback) {
 function html(callback) {
     src('./src/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
-        .pipe(rename('index.min.html'))
+        .pipe(rename({suffix: ".min"}))
         .pipe(dest('build'))
 
     return callback()
