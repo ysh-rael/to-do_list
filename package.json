@@ -1,0 +1,31 @@
+{
+  "name": "crud_in_to-do_list",
+  "version": "1.0.0",
+  "description": "to-do",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysh-rael/CRUD_IN_TO-DO_LIST.git"
+  },
+  "author": "ysh-rael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ysh-rael/CRUD_IN_TO-DO_LIST/issues"
+  },
+  "homepage": "https://github.com/ysh-rael/CRUD_IN_TO-DO_LIST#readme",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-install": "^1.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "uglify-js": "^3.17.0"
+  }
+}
