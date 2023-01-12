@@ -1,1 +1,1 @@
-[click here](https://ysh-rael.github.io/CRUD_IN_TO-DO_LIST/)
+[click here](https://ysh-rael.github.io/to-do_list/build/index.min.html)
